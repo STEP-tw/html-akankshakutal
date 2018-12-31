@@ -1,0 +1,22 @@
+.left_box_data {
+  width: 350px;
+  margin: 30px;
+}
+p {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+h1,
+h2 {
+  font-family: sans-serif;
+}
+pre {
+  font-family: sans-serif;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
