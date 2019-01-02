@@ -14,9 +14,47 @@ pre {
   font-family: sans-serif;
 }
 table,
-th,
-td {
+th {
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
+}
+.grass {
+  background: rgb(157, 248, 157);
+}
+.poison {
+  background: rgb(241, 156, 241);
+}
+.fire {
+  background: rgb(245, 168, 140);
+}
+.flying {
+  background: rgb(243, 178, 243);
+}
+.water {
+  background: rgb(184, 231, 250);
+}
+.bug {
+  background: rgb(226, 252, 189);
+}
+.normal {
+  background: rgb(173, 190, 142);
+}
+.dark {
+  background: rgb(187, 144, 144);
+}
+.electric {
+  background: rgb(245, 245, 158);
+}
+.psychic {
+  background: rgb(252, 138, 138);
+}
+.ice {
+  background: rgb(162, 197, 197);
+}
+.steel {
+  background: lightcyan;
+}
+.ground {
+  background: rgb(226, 205, 152);
 }
