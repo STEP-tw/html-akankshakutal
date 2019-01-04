@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      td {
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+      }
+      .scoreDiv {
+        float: right;
+        height: 400px;
+        width: 300px;
+        border: 1px solid black;
+        margin-right: 40px;
+        margin-top: 65px;
+      }
+      .score {
+        font-size: 30px;
+        margin-left: 25%;
+        margin-right: 25%;
+        background: lightblue;
+      }
+    </style>
+    <script src="/html-akankshakutal/games/colourSelection.js"></script>
+    <title>Eye_test</title>
+    <link
+      rel="stylesheet"
+      href="/html-akankshakutal/games/GameStyleSheet.css"
+    />
+  </head>
+  <body>
+    <img src="/html-akankshakutal/images/topImage.png" width="100%" />
+    <div>
+      <div class="scoreDiv">
+        <h1>SCORE</h1>
+        <h1 id="score" class="score">0</h1>
+      </div>
+      <h1 id="heading" style=" margin-left:10% ">Red</h1>
+      <table style="margin-top: 0%; margin-left: 25%">
+        <tbody>
+          <tr>
+            <td id="red" class="red" onclick="changeColorName(this)"></td>
+            <td id="green" class="green" onclick="changeColorName(this)"></td>
+          </tr>
+          <tr>
+            <td id="blue" class="blue" onclick="changeColorName(this)"></td>
+            <td id="yellow" class="yellow" onclick="changeColorName(this)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
