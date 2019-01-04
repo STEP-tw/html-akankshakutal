@@ -5,6 +5,7 @@
 p {
   font-size: 16px;
   font-family: sans-serif;
+  margin: 5px;
 }
 h1,
 h2 {
@@ -19,42 +20,53 @@ th {
   border-collapse: collapse;
   text-align: center;
 }
-.grass {
+
+button:hover {
+  background: black;
+  color: white;
+}
+
+button {
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.Grass {
   background: rgb(157, 248, 157);
 }
-.poison {
+.Poison {
   background: rgb(241, 156, 241);
 }
-.fire {
+.Fire {
   background: rgb(245, 168, 140);
 }
-.flying {
+.Flying {
   background: rgb(243, 178, 243);
 }
-.water {
+.Water {
   background: rgb(184, 231, 250);
 }
-.bug {
+.Bug {
   background: rgb(226, 252, 189);
 }
-.normal {
+.Normal {
   background: rgb(173, 190, 142);
 }
-.dark {
+.Dark {
   background: rgb(187, 144, 144);
 }
-.electric {
+.Electric {
   background: rgb(245, 245, 158);
 }
-.psychic {
+.Psychic {
   background: rgb(252, 138, 138);
 }
-.ice {
+.Ice {
   background: rgb(162, 197, 197);
 }
-.steel {
+.Steel {
   background: lightcyan;
 }
-.ground {
+.Ground {
   background: rgb(226, 205, 152);
 }
