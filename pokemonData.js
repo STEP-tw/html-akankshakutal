@@ -22,6 +22,7 @@ const createTable = function(pokemondata) {
   }
   return tableRow;
 };
+
 const main = function() {
   let result = "";
   let pokemonData = [];
