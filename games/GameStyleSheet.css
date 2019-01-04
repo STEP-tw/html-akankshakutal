@@ -1,22 +1,10 @@
-.red {
+td {
   width: 200px;
   height: 200px;
-  background-color: red;
 }
-.blue {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-}
-.green {
-  width: 200px;
-  height: 200px;
-  background-color: green;
-}
-.yellow {
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
+img {
+  width: 100px;
+  height: 100px;
 }
 
 h1 {
@@ -37,7 +25,7 @@ td {
 }
 .scoreDiv {
   float: right;
-  height: 400px;
+  height: 270px;
   width: 300px;
   border: 1px solid black;
   margin-right: 40px;
