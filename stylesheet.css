@@ -54,6 +54,13 @@ button {
 .middleDiv {
   height: 40px;
 }
+
+.contents {
+  width: 400px;
+  border: 1px solid black;
+  height: 500px;
+}
+
 h4 {
   text-align: center;
   background: lightblue;

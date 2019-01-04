@@ -1,9 +1,13 @@
 const colors = ["red", "blue", "green", "yellow"];
-let positiveScore = 0;
+let score = 10;
 let colorNameIndex = 1;
 
 const changeColorName = function(box) {
   updateScore(box.id, colors[colorNameIndex]);
+  if (score < 0) {
+    document.getElementById("main").innerHTML =
+      "<h1 style = 'margin-top:10%; color:red'> GAME OVER......! </h1>";
+  }
   colorNameIndex = Math.floor(Math.random() * 4);
   const colorIndex = Math.floor(Math.random() * 4);
 
@@ -15,10 +19,10 @@ const changeColorName = function(box) {
 
 const updateScore = function(id, color) {
   if (id == color) {
-    positiveScore = positiveScore + 10;
-    document.getElementById("score").innerText = positiveScore;
+    score = score + 10;
+    document.getElementById("score").innerText = score;
   } else {
-    positiveScore = positiveScore - 10;
-    document.getElementById("score").innerText = positiveScore;
+    score = score - 10;
+    document.getElementById("score").innerText = score;
   }
 };
