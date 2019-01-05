@@ -9,7 +9,6 @@ window.onload = function() {
   }
   document.getElementById("table").innerHTML = tableRow;
   setRandomBackground();
-  updateScore();
 };
 
 const randomNumberGenerator = function(add) {
@@ -27,14 +26,16 @@ const updateScore = function(event) {
   let a = window.getComputedStyle(event.target, null).backgroundColor;
   if (a == "rgb(0, 0, 0)") {
     score += 10;
+    document.getElementById("score").innerText = score;
   } else {
-    document.getElementById("main").innerHTML = "<h1>GAME OVER......!</h1>";
+    document.getElementById("main").innerHTML =
+      "<h1 style = 'text-align: center; color:red'>GAME OVER......!</h1>";
   }
   scrollWindow();
 };
 
 const scrollWindow = function() {
-  coordinates -= 200;
+  coordinates -= 150;
   window.scrollTo(coordinates, coordinates);
 };
 
