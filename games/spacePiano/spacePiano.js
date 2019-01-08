@@ -53,3 +53,17 @@ const addRow = function() {
   tableRow += "</tr>\n";
   return tableRow;
 };
+
+function setTimer() {
+  let id = setInterval(frame, 1000);
+  timer = 10;
+  function frame() {
+    timer--;
+    document.getElementById("timer").innerText = timer;
+    if (timer == 0 || score == -10) {
+      clearInterval(id);
+      document.getElementById("main").innerHTML =
+        "<h1 style = 'color:red'>GAME OVER ....!</h1>";
+    }
+  }
+}

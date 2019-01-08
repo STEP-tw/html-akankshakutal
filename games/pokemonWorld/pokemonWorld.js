@@ -5,7 +5,7 @@ let imageAdd = [
   "https://bit.ly/2t2aPXK",
   "https://bit.ly/2Otl8N8"
 ];
-let score = -10;
+let score = 0;
 let pokemonNameIndex = 0;
 let timer = 10;
 
@@ -31,10 +31,7 @@ const updateTable = function() {
 const changePokemonName = function(box) {
   updateScore(box.id, pokemons[pokemonNameIndex]);
   updateTable();
-  if (score == -10) {
-    document.getElementById("main").innerHTML =
-      "<h1 style = 'color:red'>GAME OVER ....!</h1>";
-  }
+  setTimer();
   pokemonNameIndex = Math.floor(Math.random() * 4);
   document.getElementById("heading").innerText = pokemons[
     pokemonNameIndex
@@ -50,3 +47,17 @@ const updateScore = function(id, pokemon) {
     document.getElementById("score").innerText = score;
   }
 };
+
+function setTimer() {
+  let id = setInterval(frame, 1000);
+  timer = 10;
+  function frame() {
+    timer--;
+    document.getElementById("timer").innerText = timer;
+    if (timer == 0 || score == -10) {
+      clearInterval(id);
+      document.getElementById("main").innerHTML =
+        "<h1 style = 'color:red'>GAME OVER ....!</h1>";
+    }
+  }
+}

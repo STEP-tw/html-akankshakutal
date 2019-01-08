@@ -13,9 +13,13 @@ img {
   height: 200px;
 }
 
+h1 {
+  text-align: center;
+}
+
 .scoreDiv {
   float: right;
-  height: 270px;
+  height: 350px;
   width: 300px;
   border: 1px solid black;
   margin-right: 40px;
@@ -27,4 +31,5 @@ img {
   margin-left: 25%;
   margin-right: 25%;
   background: lightblue;
+  text-align: center;
 }
