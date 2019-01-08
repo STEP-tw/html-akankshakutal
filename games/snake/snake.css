@@ -1,0 +1,50 @@
+.snakeBody {
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+}
+
+.snakeHead {
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+}
+
+.food {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  background: red;
+}
+
+.board {
+  width: 500px;
+  height: 500px;
+  margin-left: 30%;
+  margin-top: 0%;
+  border: 1px solid black;
+}
+
+.button {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+h1 {
+  text-align: center;
+}
+
+.scoreDiv {
+  float: right;
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  margin-right: 40px;
+  margin-top: 65px;
+}
+.score {
+  font-size: 30px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background: lightblue;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Snake</title>
+	<link rel='stylesheet' type='text/css' href='/html-akankshakutal/games/snake/snake.css' />
+	<script src='/html-akankshakutal/games/snake/snake.js'></script>
+	</canvas>
+</head>
+
+<body onkeydown='updateMove(event)'>
+	<img src="/html-akankshakutal/images/topImage.png" style="width: 100%;" />
+	<div id="main">
+		<h1>SNAKE GAME</h1>
+	<div>
+		<div class="scoreDiv">
+			<h1>SCORE</h1>
+			<h1 id="score" class="score">0</h1>
+			<button onclick="startGame()" style="font-size: 20px; margin-left: 35%">
+				START
+			</button>
+		</div>
+		<div id='board' class='board'>
+			<div id="snake">
+				<div id='food' class="food">
+				</div>
+				<div id=0 class='snakeHead'></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
