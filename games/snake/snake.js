@@ -1,9 +1,10 @@
-const BOUNDARY = 625;
-const TEN = 10;
+const BOUNDARY = 450;
+const TWENTY = 20;
+let score = 0;
 
-const addTwentyFive = num => num + TEN;
-const subtractTwentyFive = num => num - TEN;
-const getRandomCoOrdinate = () => Math.ceil(Math.random() * 11) * TEN;
+const addTwenty = num => num + TWENTY;
+const subtractTwenty = num => num - TWENTY;
+const getRandomCoOrdinate = () => Math.floor(Math.random() * 20) * TWENTY;
 const getPosition = element => element["position"];
 const getAction = element => element["action"];
 const getCoOrdinateToChange = element => element["coOrdinateToChange"];
@@ -14,38 +15,39 @@ const moveSnake = function() {
 
 const moveRight = () => {
   coOrdinateToChange = "y";
-  action = addTwentyFive;
+  action = addTwenty;
 };
 const moveDown = () => {
   coOrdinateToChange = "x";
-  action = addTwentyFive;
+  action = addTwenty;
 };
 const moveUp = () => {
   coOrdinateToChange = "x";
-  action = subtractTwentyFive;
+  action = subtractTwenty;
 };
 const moveLeft = () => {
   coOrdinateToChange = "y";
-  action = subtractTwentyFive;
+  action = subtractTwenty;
 };
 const getCurrentTailDetail = () => snake[snake.length - 1];
 
 const position = { x: 0, y: 0 };
 let coOrdinateToChange = "x";
-let action = addTwentyFive;
+let action = addTwenty;
 const snakeHead = { action, coOrdinateToChange, position };
 const snake = [snakeHead];
 
 const getPositionTag = function(position) {
-  console.log(position);
-  return `position:relative;top:${position["x"]}px;left:${position["y"]}px`;
+  return (
+    "position:relative;top:" + position["x"] + "px;left:" + position["y"] + "px"
+  );
 };
 
 const moveSnakeFood = function(foodPosition) {
   const food = document.getElementById("food");
   foodPosition["x"] = getRandomCoOrdinate();
   foodPosition["y"] = getRandomCoOrdinate();
-  food.setAttribute("style", `${getPositionTag(foodPosition)};`);
+  food.style = getPositionTag(foodPosition);
 };
 
 const createPart = function(action, coOrdinateToChange, position) {
@@ -66,12 +68,12 @@ const addTailBody = function() {
 
 const addTailBodyTag = function() {
   const id = snake.length;
-  return `<div id=${id} class='snakeBody'></div>`;
+  return "<div id='" + id + "'class='snakeBody'></div>";
 };
 
 const addTail = function() {
   const snake = document.getElementById("snake");
-  snake.innerHTML = snake.innerHTML + `${addTailBodyTag()}`;
+  snake.innerHTML = snake.innerHTML + addTailBodyTag();
   addTailBody();
 };
 
@@ -83,7 +85,7 @@ const setSnakePartAttribute = function(id) {
   const action = getAction(snakePart);
 
   position[coOrdinateToChange] = action(position[coOrdinateToChange]);
-  bodyPart.setAttribute("style", `${getPositionTag(position)};`);
+  bodyPart.style = getPositionTag(position);
 };
 
 const circulateSnakePartData = function(data1, data2) {
@@ -91,7 +93,7 @@ const circulateSnakePartData = function(data1, data2) {
   const position2 = getPosition(data2);
   data1["action"] = getAction(data2);
   data1["coOrdinateToChange"] = getCoOrdinateToChange(data2);
-  position1["x"] = position2["x"] - 50;
+  position1["x"] = position2["x"] - 40;
   position1["y"] = position2["y"];
 };
 
@@ -105,7 +107,7 @@ const moveSnakeBody = function() {
 const moveSnakeHead = function() {
   let head = document.getElementById(0);
   position[coOrdinateToChange] = action(position[coOrdinateToChange]);
-  head.setAttribute("style", `${getPositionTag(position)};`);
+  head.style = getPositionTag(position);
 };
 
 const moves = {
@@ -120,8 +122,7 @@ const updateMove = event => {
 };
 const isSamePoint = (p1, p2) => p1["x"] == p2["x"] && p1["y"] == p2["y"];
 
-const hasEatenFood = function(foodPosition) {
-  const snakeHead = snake[0];
+const hasEatenFood = function(foodPosition, snakeHead) {
   const headPosition = getPosition(snakeHead);
   return isSamePoint(headPosition, foodPosition);
 };
@@ -138,14 +139,10 @@ const isOutOfGround = element =>
 
 const isOutOfBoundary = function() {
   const headPosition = getPosition(snake[0]);
-  console.log("prv:" + getPosition(snake[0]));
-
   return hasNegativeCoOrdinate(headPosition) || isOutOfGround(headPosition);
 };
 
 const hasTouchedWall = () => isOutOfBoundary();
-
-const ENDGAMEMSG = "GAME OVER.....!";
 
 const showEndMsg = () => {
   main.innerHTML = "<h1>GAME OVER.....!</h1>";
@@ -155,8 +152,10 @@ const startGame = () => {
   const foodPosition = {};
   moveSnakeFood(foodPosition);
   const runSnake = setInterval(() => {
-    if (hasEatenFood(foodPosition)) {
+    if (hasEatenFood(foodPosition, snakeHead)) {
       addTail();
+      score += 10;
+      document.getElementById("score_board").innerText = score;
       moveSnakeFood(foodPosition);
     }
     if (hasTouchedWall()) {
@@ -165,4 +164,11 @@ const startGame = () => {
     }
     moveSnake();
   }, 100);
+};
+
+window.onload = function() {
+  let startButton = document.getElementById("start");
+  startButton.onclick = startGame;
+  let main = document.getElementById("main");
+  main.onkeydown = updateMove;
 };

@@ -1,3 +1,10 @@
+button {
+  font-size: 20px;
+  margin-left: 35%;
+}
+img {
+  width: 100%;
+}
 .snakeBody {
   background-color: blue;
   width: 20px;
