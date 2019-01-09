@@ -1,9 +1,9 @@
 const BOUNDARY = 625;
-const TWENTYFIVE = 25;
+const TEN = 10;
 
-const addTwentyFive = num => num + TWENTYFIVE;
-const subtractTwentyFive = num => num - TWENTYFIVE;
-const getRandomCoOrdinate = () => Math.ceil(Math.random() * 11) * TWENTYFIVE;
+const addTwentyFive = num => num + TEN;
+const subtractTwentyFive = num => num - TEN;
+const getRandomCoOrdinate = () => Math.ceil(Math.random() * 11) * TEN;
 const getPosition = element => element["position"];
 const getAction = element => element["action"];
 const getCoOrdinateToChange = element => element["coOrdinateToChange"];
@@ -37,6 +37,7 @@ const snakeHead = { action, coOrdinateToChange, position };
 const snake = [snakeHead];
 
 const getPositionTag = function(position) {
+  console.log(position);
   return `position:relative;top:${position["x"]}px;left:${position["y"]}px`;
 };
 
@@ -114,7 +115,9 @@ const moves = {
   ArrowLeft: moveLeft
 };
 
-const updateMove = event => moves[event.key]();
+const updateMove = event => {
+  moves[event.key]();
+};
 const isSamePoint = (p1, p2) => p1["x"] == p2["x"] && p1["y"] == p2["y"];
 
 const hasEatenFood = function(foodPosition) {
@@ -135,6 +138,8 @@ const isOutOfGround = element =>
 
 const isOutOfBoundary = function() {
   const headPosition = getPosition(snake[0]);
+  console.log("prv:" + getPosition(snake[0]));
+
   return hasNegativeCoOrdinate(headPosition) || isOutOfGround(headPosition);
 };
 
