@@ -1,4 +1,4 @@
-const BOUNDARY = 450;
+const BOUNDARY = 430;
 const TWENTY = 20;
 let score = 0;
 
