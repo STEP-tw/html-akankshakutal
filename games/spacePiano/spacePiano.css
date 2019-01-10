@@ -1,0 +1,35 @@
+td {
+  width: 50px;
+  height: 200px;
+  border: 1px solid black;
+}
+table {
+  margin-left: 40%;
+}
+
+img {
+  position: sticky;
+  top: 0;
+  height: 200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.scoreDiv {
+  float: right;
+  height: 350px;
+  width: 300px;
+  border: 1px solid black;
+  margin-right: 40px;
+  margin-top: 65px;
+  top: 250px;
+}
+.score {
+  font-size: 30px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background: lightblue;
+  text-align: center;
+}

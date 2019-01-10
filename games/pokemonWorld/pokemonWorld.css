@@ -1,0 +1,39 @@
+td {
+  width: 200px;
+  height: 200px;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+}
+
+table,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+.scoreDiv {
+  float: right;
+  height: 350px;
+  width: 300px;
+  border: 1px solid black;
+  margin-right: 40px;
+  margin-top: 65px;
+}
+.score {
+  font-size: 30px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background: lightblue;
+}
